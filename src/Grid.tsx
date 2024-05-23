@@ -15,8 +15,6 @@ import Slika9 from './images/Slika9.png';
 import Slika10 from './images/Slika10.png';
 import Slika11 from './images/Slika11.png';
 import Slika12 from './images/Slika12.jpg';
-import { colors } from '@mui/material';
-import { Bolt, BorderAllRounded } from '@mui/icons-material';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -26,81 +24,59 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function FormRow() {
+const items = [
+  { src: Slika1, title: 'Cup cake', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika2, title: 'Salad', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika3, title: 'Pizza', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika4, title: 'Pasta', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika5, title: 'Carrot', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika6, title: 'Cake', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika7, title: 'Salmon', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika8, title: 'Pork', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika9, title: 'Pear', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika10, title: 'Apple', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika11, title: 'Soup', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika12, title: 'Peach', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+];
+
+interface FormRowProps {
+  searchQuery: string;
+}
+
+function FormRow({ searchQuery }: FormRowProps) {
+  const filteredItems = items.filter(item =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <React.Fragment>
-      <Grid item xs={3}>
-      <img src={Slika1} width={365} height={365}/>
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika2} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika3} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika4} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika5} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika6} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika7} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika8} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika9} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika10} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}> <Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika11} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-
-      <Grid item xs={3}>
-      <img src={Slika12} width={365} height={365} />
-        <Item sx={{ backgroundColor: '#ECB176' }}><Box fontWeight={700} fontSize={30} display={'block'}>Cup cake</Box>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</Item>
-      </Grid>
-    </React.Fragment>
+    <>
+      {filteredItems.map((item, index) => (
+        <Grid item xs={3} key={index}>
+          <img src={item.src} width={365} height={365} />
+          <Item sx={{ backgroundColor: '#ECB176' }}>
+            <Box fontWeight={700} fontSize={30} display={'block'}>{item.title}</Box>
+            {item.description}
+          </Item>
+        </Grid>
+      ))}
+    </>
   );
 }
 
- function Grid1() {
+interface Grid1Props {
+  searchQuery: string;
+}
+
+function Grid1({ searchQuery }: Grid1Props) {
   return (
-    <Box sx={{ flexGrow: 1, padding:10,}}>
-      <Grid container spacing={1} >
-        <Grid container item spacing={10} >
-          <FormRow />
+    <Box sx={{ flexGrow: 1, padding: 10 }}>
+      <Grid container spacing={1}>
+        <Grid container item spacing={10}>
+          <FormRow searchQuery={searchQuery} />
         </Grid>
       </Grid>
     </Box>
   );
 }
+
 export default Grid1;
