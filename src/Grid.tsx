@@ -24,7 +24,13 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const items = [
+interface Item {
+  src: string;
+  title: string;
+  description: string;
+}
+
+const items: Item[] = [
   { src: Slika1, title: 'Cup cake', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
   { src: Slika2, title: 'Salad', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
   { src: Slika3, title: 'Pizza', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
@@ -43,7 +49,7 @@ interface FormRowProps {
   searchQuery: string;
 }
 
-function FormRow({ searchQuery }: FormRowProps) {
+const FormRow: React.FC<FormRowProps> = ({ searchQuery }) => {
   const filteredItems = items.filter(item =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -51,8 +57,17 @@ function FormRow({ searchQuery }: FormRowProps) {
   return (
     <>
       {filteredItems.map((item, index) => (
-        <Grid item xs={3} key={index}>
-          <img src={item.src} width={365} height={365} />
+        <Grid item xs={12} sm={6} md={4} lg={3} key={index} sx={{padding:'15px',}}>
+          <Box
+            component="img"
+            src={item.src}
+            alt={item.title}
+            sx={{
+              width: '100%',
+              height: '300px',
+              objectFit: 'cover',
+            }}
+          />
           <Item sx={{ backgroundColor: '#ECB176' }}>
             <Box fontWeight={700} fontSize={30} display={'block'}>{item.title}</Box>
             {item.description}
@@ -61,22 +76,20 @@ function FormRow({ searchQuery }: FormRowProps) {
       ))}
     </>
   );
-}
+};
 
 interface Grid1Props {
   searchQuery: string;
 }
 
-function Grid1({ searchQuery }: Grid1Props) {
+const Grid1: React.FC<Grid1Props> = ({ searchQuery }) => {
   return (
     <Box sx={{ flexGrow: 1, padding: 10 }}>
       <Grid container spacing={1}>
-        <Grid container item spacing={10}>
-          <FormRow searchQuery={searchQuery} />
-        </Grid>
+        <FormRow searchQuery={searchQuery} />
       </Grid>
     </Box>
   );
-}
+};
 
 export default Grid1;
