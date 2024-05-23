@@ -68,7 +68,7 @@ function App() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2,display: {lg:'none', md:'none'}}}
           >
             <MenuIcon />
           </IconButton>
@@ -76,9 +76,17 @@ function App() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{flexGrow: 1,display: { xs: 'none', sm: 'none', lg:'flex', md:'flex'}}}
           >
-            MUI
+            Recipe App
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 18, display: { xs: 'none', sm: 'none', lg:'flex', md:'flex'} }}
+          >
+            Add Recipe
           </Typography>
           <Search>
             <SearchIconWrapper>
