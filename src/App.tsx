@@ -1,4 +1,10 @@
 import React, { useState, useRef, FormEvent, ChangeEvent } from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 const MergedComponent: React.FC = () => {
   const [imageURLs, setImageURLs] = useState<string[]>([]);
@@ -39,57 +45,96 @@ const MergedComponent: React.FC = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          New Item: <input ref={nameRef} type="text" />
-        </div>
-        <div>
-          New Description:
-          <br />
-          <textarea ref={descriptionRef}></textarea>
-        </div>
-        <div>
-          <input
-            type="file"
-            id="file"
-            onChange={handleImageUpload}
-            multiple
-          />
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Box sx={{ mt: 4 }}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            New Item
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <Box sx={{ mb: 2 }}>
+              <TextField
+                inputRef={nameRef}
+                label="Item Name"
+                variant="outlined"
+                fullWidth
+              />
+            </Box>
+            <Box sx={{ mb: 2 }}>
+              <TextField
+                inputRef={descriptionRef}
+                label="Item Description"
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={4}
+              />
+            </Box>
+            <Box sx={{ mb: 2 }}>
+              <input
+                accept="image/*"
+                type="file"
+                id="file"
+                onChange={handleImageUpload}
+                multiple
+                style={{ display: 'none' }}
+              />
+              <label htmlFor="file">
+                <Button variant="contained" component="span">
+                  Upload Images
+                </Button>
+              </label>
+            </Box>
+            <Box sx={{ mb: 2 }}>
+              <Button type="submit" variant="contained" color="primary">
+                Submit
+              </Button>
+            </Box>
+          </form>
 
-      <div>
-        <h3>Preview images:</h3>
-        {imageURLs.map((url) => (
-          <img src={url} width={50} height={50} />
-        ))}
-      </div>
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h6" component="h2">
+              Preview images:
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mt: 2 }}>
+              {imageURLs.map((url, index) => (
+                <img key={index} src={url} width={50} height={50} alt={`preview-${index}`} />
+              ))}
+            </Box>
+          </Box>
 
-      <div>
-        <h3>Uploaded images:</h3>
-        {displayImages.map((url) => (
-          <img src={url} width={300} height={300} />
-        ))}
-      </div>
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h6" component="h2">
+              Uploaded images:
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mt: 2 }}>
+              {displayImages.map((url, index) => (
+                <img key={index} src={url} width={300} height={300} alt={`uploaded-${index}`} />
+              ))}
+            </Box>
+          </Box>
 
-      <div>
-        <h3>Items:</h3>
-        {names.map((name, index) => (
-          <div key={index}>{name}</div>
-        ))}
-      </div>
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h6" component="h2">
+              Items:
+            </Typography>
+            {names.map((name, index) => (
+              <Typography key={index}>{name}</Typography>
+            ))}
+          </Box>
 
-      <div>
-        <h3>Descriptions:</h3>
-        {descriptions.map((description, index) => (
-          <div key={index}>{description}</div>
-        ))}
-      </div>
-    </div>
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h6" component="h2">
+              Descriptions:
+            </Typography>
+            {descriptions.map((description, index) => (
+              <Typography key={index}>{description}</Typography>
+            ))}
+          </Box>
+        </Box>
+      </Container>
+    </React.Fragment>
   );
 };
 
