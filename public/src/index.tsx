@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppBar from './appBar';
+import App from './App';
 import Grid1 from './Grid';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <AppBar />
+    <App />
     <Grid1 />
   </React.StrictMode>
 );
