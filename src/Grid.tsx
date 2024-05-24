@@ -31,18 +31,18 @@ interface Item {
 }
 
 const items: Item[] = [
-  { src: Slika1, title: 'Cup cake', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika2, title: 'Salad', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika3, title: 'Pizza', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika4, title: 'Pasta', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika5, title: 'Carrot', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika6, title: 'Cake', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika7, title: 'Salmon', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika8, title: 'Pork', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika9, title: 'Pear', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika10, title: 'Apple', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika11, title: 'Soup', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-  { src: Slika12, title: 'Peach', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika1, title: 'Forest cake', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika2, title: 'Cake', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika3, title: 'Cookie', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika4, title: 'Corn salad', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika5, title: 'Egg', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika6, title: 'Pasta', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika7, title: 'Fruit', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika8, title: 'Baked salmon', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika9, title: 'Cheese lasagna', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika10, title: 'Pizza', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika11, title: 'Pasta', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+  { src: Slika12, title: 'Healthy salad', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
 ];
 
 interface FormRowProps {
