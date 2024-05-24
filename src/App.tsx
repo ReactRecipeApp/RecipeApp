@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 const MergedComponent: React.FC = () => {
   const [imageURLs, setImageURLs] = useState<string[]>([]);
@@ -81,13 +82,13 @@ const MergedComponent: React.FC = () => {
                 style={{ display: 'none' }}
               />
               <label htmlFor="file">
-                <Button variant="contained" component="span">
+                <Button variant="contained" component="span" sx={{ backgroundColor: '#ECB176' }}>
                   Upload Images
                 </Button>
               </label>
             </Box>
             <Box sx={{ mb: 2 }}>
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="submit" variant="contained" color="primary" sx={{ backgroundColor: '#ECB176' }}>
                 Submit
               </Button>
             </Box>
